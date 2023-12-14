@@ -3,7 +3,7 @@
   "author": "EliasPereyra",
   "description": "Una landing page para un curso de dibujos en la categoría de Reaismo",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
