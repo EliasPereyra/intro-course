@@ -1,39 +1,45 @@
 ---
-  import {FirstSectionListItems} from "../../utils/ListItems"
+import { FirstSectionListItems } from "../../utils/ListItems";
 ---
 
 <section id="first-section">
-  <div id="first-section">
+  <div id="first-column">
     <h2>Este curso es para ti, si</h2>
     <ul>
-      {FirstSectionListItems.map(items => (
-        <li class="description">{items.text}</li>
-      ))}
+      {
+        FirstSectionListItems.map((items) => (
+          <li class="description">{items.text}</li>
+        ))
+      }
     </ul>
-    <p class="description">Te guiaré en ir conociendo y perfeccionando cada trazo, sombra, cada textura, para lograr resultados sorprendentes.</p>
+    <p class="description">
+      Te guiaré en ir conociendo y perfeccionando cada trazo, sombra, cada
+      textura, para lograr resultados sorprendentes.
+    </p>
   </div>
-  <div id="second-section"></div>
+  <div id="second-column"></div>
 </section>
 
 <style>
   #first-section {
-    padding: 5em 0;
-    background: linear-gradient(150deg, #FDFEFB 47.5%, rgba(196, 253, 226, 0.13) 180.05%);
+    padding: 9em 60px;
+    background: linear-gradient(
+      150deg,
+      #fdfefb 47.5%,
+      rgba(196, 253, 226, 0.13) 180.05%
+    );
 
+    & #first-column {
+      & ul {
+        & li {
+          margin: 14px 0;
+          width: 60ch;
+        }
+      }
 
-    & h2 {
-      font-size: 38px;
-    }
-    & ul {
-      & li {
-        list-style-position: inside;
-        margin: 14px 0;
+      & p {
         width: 60ch;
       }
-    }
-
-    & p {
-      width: 60ch;
     }
   }
 </style>
