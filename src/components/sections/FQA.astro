@@ -1,0 +1,49 @@
+---
+import { qas } from "../../utils/QAs";
+---
+
+<section id="fqa">
+  <h2>Preguntas frecuentes</h2>
+
+  <!-- aqui van las preguntas -->
+  {
+    qas.map((qa) => (
+      <>
+        <details>
+          <summary class="description">{qa.question}</summary>
+          <p class="description">{qa.answer}</p>
+        </details>
+      </>
+    ))
+  }
+</section>
+
+<style>
+  #fqa {
+    background: rgba(246, 167, 76, 0.75);
+
+    padding: 8em 60px;
+    & h2 {
+      margin-bottom: 2em;
+      text-align: center;
+    }
+
+    & details {
+      margin: 0 auto;
+      width: 803px;
+      border-radius: 10px;
+      border: 1px solid var(--lm-primary, #ed8207);
+      background: var(--lm-background, #fefdfb);
+      padding: 1em;
+
+      summary {
+        font-weight: bold;
+      }
+
+      p {
+        margin-top: 20px;
+        line-height: 28px;
+      }
+    }
+  }
+</style>
