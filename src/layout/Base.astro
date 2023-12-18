@@ -1,33 +1,106 @@
 ---
-  const { title, description, course_author, dev_author } = Astro.props
+const { title, description, course_author } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="Course author" content={course_author} />
-  <meta name="Dev author" content={dev_author} />
-  <meta name="description" content={description} />
-  <meta name="generator" content={Astro.generator} />
-  <link rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Course author" content={course_author} />
+    <meta name="description" content={description} />
 
-  <title>{title}</title>
-</head>
-<body>
- <main>
-  <slot />
- </main>
-</body>
+    <link
+      rel="apple-touch-icon"
+      sizes="57x57"
+      href="favicon/apple-icon-57x57.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="favicon/apple-icon-60x60.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="favicon/apple-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="favicon/apple-icon-76x76.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/apple-icon-114x114.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/apple-icon-120x120.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/apple-icon-144x144.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/apple-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/apple-icon-180x180.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="favicon/android-icon-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="favicon/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <title>{title}</title>
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+  </body>
 </html>
 
 <style is:global>
+  @import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap");
+
   :root {
-    --primary: #ED8207;
+    --primary: #ed8207;
     --text: #011214;
-    --white: #FEFDFB;
-    --gradient: linear-gradient(310deg, var(--primary) 21.26%, #7206D0 88.02%);
+    --white: #fefdfb;
+    --gradient: linear-gradient(310deg, var(--primary) 21.26%, #7206d0 88.02%);
   }
 
   * {
@@ -36,12 +109,26 @@
     box-sizing: border-box;
   }
 
-  h1, h2, h3 {
+  h1,
+  h2,
+  h3,
+  h4 {
     font-family: Poppins, sans-serif;
   }
 
-  p {
-    font-family: 'Hind';
+  h2 {
+    font-size: 38px;
+  }
+
+  p,
+  small,
+  li,
+  summary {
+    font-family: "Hind", sans-serif;
+  }
+
+  li {
+    list-style-position: inside;
   }
 
   button {
@@ -49,11 +136,8 @@
     border-radius: 10px;
   }
 
-  main {
-    padding: 0 60px;
-  }
-
   .description {
-    font-size: 24px;
+    font-size: 20px;
+    line-height: 36px;
   }
 </style>
