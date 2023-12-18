@@ -1,0 +1,33 @@
+---
+import { type CardProps } from "../../types/Props";
+
+const { cardNumber, text } = Astro.props as CardProps;
+---
+
+<article class="card-container">
+  <p class="description">{text}</p>
+</article>
+
+<style>
+  .card-container {
+    padding: 2em;
+    text-align: center;
+    position: relative;
+    width: 292px;
+
+    border-radius: 10px;
+    border: 1px solid var(--lm-primary, #ed8207);
+    background: linear-gradient(165deg, #fff -12.11%, #ffe5c8 146.49%);
+
+    &::before {
+      content: "1";
+      top: -60px;
+      left: 0;
+      font-size: 60px;
+      font-weight: bold;
+      font-family: "Poppins", sans-serif;
+      position: absolute;
+      color: var(--primary);
+    }
+  }
+</style>
