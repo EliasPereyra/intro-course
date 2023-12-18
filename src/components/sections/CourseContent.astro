@@ -1,0 +1,41 @@
+---
+import CourseModule from "../widgets/CourseModule.astro";
+import { courseModules } from "../../utils/CourseModules";
+---
+
+<section id="course-content">
+  <h2>Contenido del curso</h2>
+
+  <!-- Un grid con todos los modulos -->
+  <ul id="course-modules">
+    {
+      courseModules.map((courseModule) => (
+        <li>
+          <CourseModule
+            moduleNumber={courseModule.moduleNumber}
+            classes={courseModule.classes}
+          />
+        </li>
+      ))
+    }
+  </ul>
+</section>
+
+<style>
+  #course-content {
+    background: linear-gradient(128deg, #fefefe 13.15%, #fafafa 83.71%);
+
+    padding: 8em 60px;
+
+    & #course-modules {
+      margin-top: 2em;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(1ch, 1fr));
+      gap: 4em;
+    }
+
+    & ul li {
+      list-style: none;
+    }
+  }
+</style>
