@@ -4,7 +4,6 @@ import Button from "../atoms/Button.astro"
 
 import DarkLogo from "../../assets/logos/artistas-dark-logo.svg"
 import ScrollDownLogo from "../../assets/imgs/scroll-down.svg"
-import GeometricFigures from "../../assets/imgs/geometric-figures.svg"
 
 ---
 
@@ -37,13 +36,13 @@ import GeometricFigures from "../../assets/imgs/geometric-figures.svg"
 		position: relative;
 		background: linear-gradient(291deg, rgba(199, 156, 255, 0.70) 6.28%, rgba(255, 218, 176, 0.70) 20.2%, rgba(254, 253, 251, 0.00) 67.41%);
 
-		& #first-column {
+		#first-column {
 			.text-content {
 				display: flex;
 				flex-direction: column;
 				gap: 8px;
 
-				& .text-gradient {
+				.text-gradient {
 					background: var(--gradient);
 					background-clip: text;
 					-webkit-background-clip: text;
@@ -96,9 +95,14 @@ import GeometricFigures from "../../assets/imgs/geometric-figures.svg"
 	}
 	}
 
-		&	#second-column {
+		#second-column {
 			width: 25em;
 			padding: 4em 0;
+			@container (width < 1024px) {
+				iframe {
+					display: none;
+				}
+			}
 
 			iframe {
 				border-radius: 10px;
@@ -111,6 +115,41 @@ import GeometricFigures from "../../assets/imgs/geometric-figures.svg"
 				right: 0;
 				fill: conic-gradient(from 60deg at 84.97% 73.68%, rgba(225, 131, 53, 0.25) 0deg, rgba(254, 253, 251, 0.00) 360deg);
 				mix-blend-mode: color;
+			}
+		}
+	}
+
+	@media (width < 1024px) {
+		#hero-section {
+			padding: 4em 60px;
+		}
+
+		#first-column img {
+			width: 6em;
+		}
+
+		#second-column {
+			display: none;
+			justify-content: center;
+		}
+
+		#text-content {
+			justify-content: center;
+			align-items: center;
+		}
+
+		#scroll-down {
+			margin-top: 2rem;
+		}
+	}
+
+	@media (width < 425px) {
+		#first-column {
+			.text-content {
+				h1 {
+					font-size: 46px;
+					width: 20ch;
+				}
 			}
 		}
 	}

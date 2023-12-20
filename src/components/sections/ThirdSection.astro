@@ -36,7 +36,7 @@ import YoutubeImage from "../../assets/imgs/youtube-logo.webp";
     align-items: center;
     justify-content: space-between;
 
-    & #first-column {
+    #first-column {
       h2 {
         width: 30ch;
       }
@@ -45,6 +45,19 @@ import YoutubeImage from "../../assets/imgs/youtube-logo.webp";
         width: 60ch;
         margin-top: 20px;
       }
+    }
+  }
+
+  @media (width < 1024px) {
+    #third-section {
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      text-wrap: balance;
+    }
+
+    h2 {
+      width: 15ch;
     }
   }
 </style>
