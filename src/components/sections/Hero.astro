@@ -1,32 +1,36 @@
 ---
+import {Image} from "astro:assets"
 import Button from "../atoms/Button.astro"
+
+import DarkLogo from "../../assets/logos/artistas-dark-logo.svg"
+import ScrollDownLogo from "../../assets/imgs/scroll-down.svg"
+import GeometricFigures from "../../assets/imgs/geometric-figures.svg"
 
 ---
 
 <section id="hero-section">
   <div id="first-column">
-		<img width="110" height="110" src="../../assets/logos/artistas-logo.png" alt="Logo del curso artistas" />
+		<Image width="110" height="110" src={DarkLogo} alt="Logo del curso artistas" />
 		<div class="text-content">
 			<h1>Aprende a realizar <span class="text-gradient">Dibujos Realistas</span></h1>
 			<h3 class="description">Aprende a realizar dibujos de alto nivel de realismo, comenzando desde lo más básico a lo más avanzado</h3>
-			<div>
+			<div id="btn-wrapper">
 				<Button />
 			</div>
 		</div>
 		<div id="scroll-down">
-			<img src="../../assets/imgs/scroll-down.svg" />
+			<Image src={ScrollDownLogo} alt="Image representing scrolling down" width="30" height="50" />
 			<small>Desplázate hacia abajo para ver más secciones</small>
 		</div>
 	</div>
 	<div id="second-column">
 		<iframe width="500" height="315" src="https://www.youtube.com/embed/Ffg2JN7WHa8?si=1oUO5T-K4qhlvWgK" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border:none"></iframe>
-		<img class="geometroc-figures" src="../../assets/imgs/geometric-figures.svg" />
 	</div>
 </section>
 
 <style>
 	#hero-section {
-		padding: 4em 60px;
+		padding: 6em 60px;
 		height: 100vh;
 		display: flex;
 		gap: 2em;
@@ -35,80 +39,79 @@ import Button from "../atoms/Button.astro"
 
 		& #first-column {
 			.text-content {
-		display: flex;
-		flex-direction: column;
-		gap: 8px;
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
 
-		.text-gradient {
-		background: var(--gradient);
-		background-clip: text;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
+				& .text-gradient {
+					background: var(--gradient);
+					background-clip: text;
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
 
-	h1 {
-		font-size: 54px;
-		width: 13em;
-		line-height: 78px;
-	}
+				h1 {
+					font-size: 54px;
+					width: 13em;
+					line-height: 78px;
+				}
 
-	h1::before {
-		content: "",
-		border-radius: 1495.533px;
-		background: radial-gradient(56.81% 58.74% at 47.41% 37.42%, rgba(237, 130, 7, 0.14) 0%, rgba(237, 130, 7, 0.00) 100%);
-		width: 1080.107px;
-		height: 1495.533px;
-		transform: rotate(-36.896deg);
-	}
+				h1::before {
+					content: "",
+					border-radius: 1495.533px;
+					background: radial-gradient(56.81% 58.74% at 47.41% 37.42%, rgba(237, 130, 7, 0.14) 0%, rgba(237, 130, 7, 0.00) 100%);
+					width: 1080.107px;
+					height: 1495.533px;
+					transform: rotate(-36.896deg);
+				}
 
-	h3 {
-		color: var(--text);
-		font-weight: 300;
-		line-height: 38px;
-		width: 29em;
-	}
+				h3 {
+					color: var(--text);
+					font-weight: 300;
+					line-height: 38px;
+					width: 29em;
+				}
 
-	small {
-		font-size: 14px;
-		font-weight: 300;
-		color: rgba(0, 0, 0, 0.68);
-	}
+				#btn-wrapper {
+					margin-top: 10px;
+				}
+			}
 
-	iframe {
-		border-radius: 10px;
-	}
+		#scroll-down {
+			color: rgba(0, 0, 0, 0.68);
+			text-align: center;
+			width: 20ch;
+			text-wrap: balance;
+			margin-top: 7rem;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			gap: 5px;
 
-	iframe::after {
-		content: "",
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		fill: conic-gradient(from 60deg at 84.97% 73.68%, rgba(225, 131, 53, 0.25) 0deg, rgba(254, 253, 251, 0.00) 360deg);
-		mix-blend-mode: color;
-	}
-	}
-
-	#scroll-down {
-		color: rgba(0, 0, 0, 0.68);
-		text-align: center;
-		width: 25ch;
-		margin-top: 60px;
-		display: flex;
-		align-items: center;
-		flex-direction: column;
-		gap: 5px;
+			& small {
+				font-size: 11px;
+				font-weight: 300;
+				color: rgba(0, 0, 0, 0.68);
+			}
 	}
 	}
 
-	&	#second-column {
-		width: 25em;
-		padding: 4em 0;
+		&	#second-column {
+			width: 25em;
+			padding: 4em 0;
 
-		.geometric-figures {
-		position: absolute;
-		bottom: -20px;
-		right: 0;
-	}
-	}
+			iframe {
+				border-radius: 10px;
+			}
+
+			iframe::after {
+				content: "",
+				position: absolute;
+				top: 130px;
+				right: 0;
+				fill: conic-gradient(from 60deg at 84.97% 73.68%, rgba(225, 131, 53, 0.25) 0deg, rgba(254, 253, 251, 0.00) 360deg);
+				mix-blend-mode: color;
+			}
+		}
 	}
 </style>
