@@ -1,3 +1,8 @@
+---
+import { Image } from "astro:assets";
+import YoutubeImage from "../../assets/imgs/youtube-logo.webp";
+---
+
 <section id="third-section">
   <div id="first-column">
     <h2>¿Qué ofrezco en el Curso de Dibujos Realistas?</h2>
@@ -18,7 +23,7 @@
     </p>
   </div>
   <div id="second-column">
-    <img src="" alt="Imagen" />
+    <Image src={YoutubeImage} alt="Imagen" width="350" height="300" />
   </div>
 </section>
 
