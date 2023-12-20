@@ -1,6 +1,11 @@
+---
+import { Image } from "astro:assets";
+import CarDrawing from "../../assets/imgs/car_drawing.webp";
+---
+
 <section id="second-section">
   <div id="first-column">
-    <img src="" alt="Imagen" />
+    <Image src={CarDrawing} alt="Imagen" width="550" height="500" />
   </div>
   <div id="second-column">
     <h2>¿Sabías que aprender a dibujar Realismo no se necesita DON?</h2>
@@ -28,18 +33,18 @@
       #f2bb7a 112.15%
     );
 
-    padding: 8em 60px;
+    padding: 10em 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 5em;
 
     & #second-column {
-      h2 {
-        width: 30ch;
-      }
-
+      h2,
       p {
-        width: 60ch;
+        text-wrap: balance;
+      }
+      p {
         margin-top: 10px;
       }
     }
