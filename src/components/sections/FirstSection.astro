@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import { FirstSectionListItems } from "../../utils/ListItems";
+
+import BankImage from "../../assets/imgs/bank-drawing.webp";
 ---
 
 <section id="first-section">
@@ -17,29 +20,38 @@ import { FirstSectionListItems } from "../../utils/ListItems";
       textura, para lograr resultados sorprendentes.
     </p>
   </div>
-  <div id="second-column"></div>
+  <div id="second-column">
+    <Image src={BankImage} alt="" width="550" height="500" />
+  </div>
 </section>
 
 <style>
   #first-section {
-    padding: 9em 60px;
+    padding: 10em 60px;
     background: linear-gradient(
       150deg,
       #fdfefb 47.5%,
       rgba(196, 253, 226, 0.13) 180.05%
     );
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
 
-    & #first-column {
-      & ul {
-        & li {
+    #first-column {
+      ul {
+        li {
           margin: 14px 0;
           width: 60ch;
         }
       }
 
-      & p {
+      p {
         width: 60ch;
       }
+    }
+
+    #second-column img {
+      border-radius: 10px;
     }
   }
 </style>
