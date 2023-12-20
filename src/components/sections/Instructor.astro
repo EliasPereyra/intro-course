@@ -1,6 +1,16 @@
+---
+import { Image } from "astro:assets";
+import ProfilePhoto from "../../assets/imgs/profile-photo.webp";
+---
+
 <section id="instructor">
   <div id="first-column">
-    <img src="" alt="Imagen del instructor del curso" />
+    <Image
+      src={ProfilePhoto}
+      alt="Imagen del instructor del curso"
+      width="450"
+      height="500"
+    />
   </div>
 
   <div id="second-column">
@@ -29,13 +39,12 @@
 
     display: flex;
     align-items: center;
-    padding: 8em 60px;
+    gap: 5em;
+    padding: 10em 60px;
 
-    & #second-column {
+    #second-column {
       p {
         width: 60ch;
-      }
-      p {
         margin-top: 10px;
       }
     }
