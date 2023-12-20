@@ -1,19 +1,53 @@
+---
+import { Image } from "astro:assets";
+
+import ArtistasLogo from "../../assets/logos/artistas-logo.png";
+import FacebookIcon from "../../assets/logos/facebook.svg";
+import InstagramIcon from "../../assets/logos/instagram.svg";
+---
+
 <footer>
-  <img src="" alt="Logo del curso" />
+  <Image src={ArtistasLogo} alt="Logo del curso" width="90" height="90" />
   <h4>Curso Realismo 2024</h4>
-  <div>
+  <div id="network-icons">
     <!-- Redes sociales  -->
+    <a href="#" target="_blank"
+      ><Image
+        src={FacebookIcon}
+        alt="El ícono de facebook"
+        width="40"
+        height="40"
+      /></a
+    >
+    <a href="#" target="_blank"
+      ><Image
+        src={InstagramIcon}
+        alt="El ícono de instagram"
+        width="40"
+        height="40"
+      /></a
+    >
   </div>
 </footer>
 
 <style>
   footer {
-    background: var(--lm-text, #011214);
+    background-color: #011214;
     color: var(--white);
-
     padding: 4em 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    h4 {
+      font-weight: regular;
+    }
+
+    #network-icons {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--white);
+    }
   }
 </style>
