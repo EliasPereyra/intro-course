@@ -34,10 +34,11 @@ import InstagramIcon from "../../assets/logos/instagram.svg";
   footer {
     background-color: #011214;
     color: var(--white);
-    padding: 4em 60px;
+    padding: 4em min(30px, 60px);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     h4 {
       font-weight: regular;
@@ -48,6 +49,15 @@ import InstagramIcon from "../../assets/logos/instagram.svg";
       align-items: center;
       gap: 7px;
       color: var(--white);
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    footer {
+      justify-content: center;
+      text-align: center;
+      flex-wrap: nowrap;
+      flex-direction: column;
     }
   }
 </style>

@@ -30,7 +30,7 @@ import { qas } from "../../utils/QAs";
 
     details {
       margin: 0 auto;
-      width: 35em;
+      width: min(100%, 35em);
       border-radius: 10px;
       border: 1px solid var(--lm-primary, #ed8207);
       background: var(--lm-background, #fefdfb);
@@ -38,6 +38,7 @@ import { qas } from "../../utils/QAs";
 
       summary {
         font-weight: bold;
+        text-wrap: pretty;
       }
 
       p {
@@ -47,9 +48,13 @@ import { qas } from "../../utils/QAs";
     }
   }
 
-  @media (width < 425px) {
-    details {
-      width: 20em;
+  @media screen and (max-width: 425px) {
+    #fqa {
+      padding: 4em 30px;
+
+      h2 {
+        font-size: 32px;
+      }
     }
   }
 </style>

@@ -14,9 +14,15 @@ import Carousel from "../widgets/Carousel.astro";
     background: linear-gradient(109deg, #ffead1 6.95%, #f1be83 90.24%);
 
     padding: 8em 60px;
+  }
 
-    & h2 {
-      width: 25ch;
+  @media screen and (max-width: 425px) {
+    #drawings-students {
+      padding: 4em 30px;
+
+      h2 {
+        font-size: 32px;
+      }
     }
   }
 </style>

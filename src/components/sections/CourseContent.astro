@@ -24,18 +24,31 @@ import { courseModules } from "../../utils/CourseModules";
 <style>
   #course-content {
     background: linear-gradient(128deg, #fefefe 13.15%, #fafafa 83.71%);
-
     padding: 8em 60px;
 
-    & #course-modules {
+    #course-modules {
       margin-top: 2em;
       display: grid;
       grid-template-columns: repeat(2, minmax(1ch, 1fr));
       gap: 4em;
-    }
 
-    & ul li {
-      list-style: none;
+      li {
+        list-style: none;
+      }
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    #course-content {
+      padding: 6em 30px;
+
+      & #course-modules {
+        grid-template-columns: 1fr;
+
+        h2 {
+          font-size: 32px;
+        }
+      }
     }
   }
 </style>

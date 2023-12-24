@@ -21,7 +21,6 @@ const cardContent: CardProps[] = [
 <section id="objective-course">
   <h2>¿Cuál es el objetivo del curso?</h2>
 
-  <!-- Tres componentes aqui -->
   <ul>
     {
       cardContent.map(({ cardNumber, text }) => (
@@ -44,7 +43,6 @@ const cardContent: CardProps[] = [
       #ffe9d0 84.18%,
       rgba(242, 176, 99, 0.5) 108.03%
     );
-
     padding: 10em 60px;
     display: flex;
     flex-direction: column;
@@ -59,20 +57,23 @@ const cardContent: CardProps[] = [
       counter-reset: count;
       margin: 50px auto;
       display: flex;
+      justify-content: center;
       gap: 40px;
       list-style: none;
-
-      li {
-
-        
-      }
     }
   }
 
-  @media (width < 1024px) {
-    ul {
-      justify-content: center;
-      flex-wrap: wrap;
+  @media screen and (max-width: 425px) {
+    #objective-course {
+      padding: 4em 30px;
+
+      h2 {
+        font-size: 32px;
+      }
+
+      ul {
+        flex-direction: column;
+      }
     }
   }
 </style>

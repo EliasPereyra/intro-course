@@ -6,6 +6,11 @@ import ImageThree from "../../assets/imgs/3-md.webp";
 import ImageFour from "../../assets/imgs/4-md.webp";
 import ImageFive from "../../assets/imgs/5-md.webp";
 import ImageSix from "../../assets/imgs/6-md.webp";
+import ImageSeven from "../../assets/imgs/7-md.webp";
+import ImageEight from "../../assets/imgs/8-md.webp";
+import ImageNine from "../../assets/imgs/9-md.webp";
+import ImageTen from "../../assets/imgs/10-md.webp";
+import ImageEleven from "../../assets/imgs/11-md.webp";
 ---
 
 <section class="carousel-container">
@@ -29,46 +34,96 @@ import ImageSix from "../../assets/imgs/6-md.webp";
           height="450"
         />
       </div>
-      <li id="carousel__slide3" tabindex="0" class="carousel__slide">
-        <div class="carousel__snapper">
-          <Image
-            src={ImageThree}
-            alt="Dibujo de un alumno"
-            width="450"
-            height="450"
-          />
-        </div>
-      </li>
-      <li id="carousel__slide4" tabindex="0" class="carousel__slide">
-        <div class="carousel__snapper">
-          <Image
-            src={ImageFour}
-            alt="Dibujo de un alumno"
-            width="450"
-            height="450"
-          />
-        </div>
-      </li>
-      <li id="carousel__slide5" tabindex="0" class="carousel__slide">
-        <div class="carousel__snapper">
-          <Image
-            src={ImageFive}
-            alt="Dibujo de un alumno"
-            width="450"
-            height="450"
-          />
-        </div>
-      </li>
-      <li id="carousel__slide6" tabindex="0" class="carousel__slide">
-        <div class="carousel__snapper">
-          <Image
-            src={ImageSix}
-            alt="Dibujo de un alumno"
-            width="450"
-            height="450"
-          />
-        </div>
-      </li>
+    </li>
+    <li id="carousel__slide3" tabindex="0" class="carousel__slide">
+      <div class="carousel__snapper">
+        <Image
+          src={ImageThree}
+          alt="Dibujo de un alumno"
+          width="450"
+          height="450"
+        />
+      </div>
+    </li>
+    <li id="carousel__slide4" tabindex="0" class="carousel__slide">
+      <div class="carousel__snapper">
+        <Image
+          src={ImageFour}
+          alt="Dibujo de un alumno"
+          width="450"
+          height="450"
+        />
+      </div>
+    </li>
+    <li id="carousel__slide5" tabindex="0" class="carousel__slide">
+      <div class="carousel__snapper">
+        <Image
+          src={ImageFive}
+          alt="Dibujo de un alumno"
+          width="450"
+          height="450"
+        />
+      </div>
+    </li>
+    <li id="carousel__slide6" tabindex="0" class="carousel__slide">
+      <div class="carousel__snapper">
+        <Image
+          src={ImageSix}
+          alt="Dibujo de un alumno"
+          width="450"
+          height="450"
+        />
+      </div>
+    </li>
+    <li id="carousel__slide7" tabindex="0" class="carousel__slide">
+      <div class="carousel__snapper">
+        <Image
+          src={ImageSeven}
+          alt="Dibujo de un alumno"
+          width="450"
+          height="450"
+        />
+      </div>
+    </li>
+    <li id="carousel__slide8" tabindex="0" class="carousel__slide">
+      <div class="carousel__snapper">
+        <Image
+          src={ImageEight}
+          alt="Dibujo de un alumno"
+          width="450"
+          height="450"
+        />
+      </div>
+    </li>
+    <li id="carousel__slide9" tabindex="0" class="carousel__slide">
+      <div class="carousel__snapper">
+        <Image
+          src={ImageNine}
+          alt="Dibujo de un alumno"
+          width="450"
+          height="450"
+        />
+      </div>
+    </li>
+    <li id="carousel__slide10" tabindex="0" class="carousel__slide">
+      <div class="carousel__snapper">
+        <Image
+          src={ImageTen}
+          alt="Dibujo de un alumno"
+          width="450"
+          height="450"
+        />
+      </div>
+    </li>
+    <li id="carousel__slide11" tabindex="0" class="carousel__slide">
+      <div class="carousel__snapper">
+        <Image
+          src={ImageEleven}
+          alt="Dibujo de un alumno"
+          width="450"
+          height="450"
+        />
+      </div>
     </li>
   </ol>
   <aside class="carousel__navigation">
@@ -101,6 +156,31 @@ import ImageSix from "../../assets/imgs/6-md.webp";
       <li class="carousel__navigation-item">
         <a href="#carousel__slide6" class="carousel__navigation-button"
           >Go to slide 6</a
+        >
+      </li>
+      <li class="carousel__navigation-item">
+        <a href="#carousel__slide7" class="carousel__navigation-button"
+          >Go to slide 7</a
+        >
+      </li>
+      <li class="carousel__navigation-item">
+        <a href="#carousel__slide8" class="carousel__navigation-button"
+          >Go to slide 8</a
+        >
+      </li>
+      <li class="carousel__navigation-item">
+        <a href="#carousel__slide9" class="carousel__navigation-button"
+          >Go to slide 9</a
+        >
+      </li>
+      <li class="carousel__navigation-item">
+        <a href="#carousel__slide10" class="carousel__navigation-button"
+          >Go to slide 10</a
+        >
+      </li>
+      <li class="carousel__navigation-item">
+        <a href="#carousel__slide11" class="carousel__navigation-button"
+          >Go to slide 11</a
         >
       </li>
     </ol>
@@ -172,10 +252,15 @@ import ImageSix from "../../assets/imgs/6-md.webp";
 
   .carousel-container {
     position: relative;
-    width: 40em;
+    width: min(100%, 40em);
     height: 30rem;
-    padding: 10em;
+    padding: min(0, 10em);
     margin: 0 auto;
+  }
+
+  @media screen and (max-width: 425px) {
+    .carousel-container {
+    }
   }
 
   .carousel__viewport {
@@ -269,12 +354,6 @@ import ImageSix from "../../assets/imgs/6-md.webp";
   @media (prefers-reduced-motion: reduce) {
     .carousel__snapper {
       animation-name: none;
-    }
-  }
-
-  @media (width < 425px) {
-    .carousel-container {
-      width: 20em;
     }
   }
 </style>

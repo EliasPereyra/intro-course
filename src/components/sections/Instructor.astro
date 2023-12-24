@@ -27,34 +27,44 @@ import ProfilePhoto from "../../assets/imgs/profile-photo.webp";
       logré llevar a mis estudiantes a conseguir resultados increíbles en sus
       dibujos.
     </p>
-    <div>
-      <!-- Tres iconos -->
-    </div>
   </div>
 </section>
 
 <style>
   #instructor {
     background: #fee7cd;
-
     display: flex;
     align-items: center;
     gap: 5em;
     padding: 10em 60px;
 
+    @media (max-width: 425px) {
+      img {
+        object-fit: contain;
+        width: 100%;
+      }
+    }
+
     #second-column {
       p {
-        width: 60ch;
+        width: min(100%, 60ch);
         margin-top: 10px;
       }
     }
   }
 
-  @media (width < 1024px) {
+  @media screen and (max-width: 768px) {
     #instructor {
-      flex-direction: column;
-      text-align: center;
-      text-wrap: balance;
+      flex-direction: column-reverse;
+      padding: 6em 30px;
+
+      #second-column {
+        text-align: center;
+
+        h2 {
+          font-size: 32px;
+        }
+      }
     }
   }
 </style>

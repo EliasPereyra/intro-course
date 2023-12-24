@@ -39,6 +39,14 @@ import CarDrawing from "../../assets/imgs/car_drawing.webp";
     justify-content: space-between;
     gap: 5em;
 
+    #first-column {
+      width: 100%;
+      img {
+        object-fit: cover;
+        width: min(100%, 35em);
+      }
+    }
+
     #second-column {
       h2,
       p {
@@ -52,13 +60,17 @@ import CarDrawing from "../../assets/imgs/car_drawing.webp";
 
   @media (width < 1024px) {
     #second-section {
+      padding: 6em 30px;
       flex-direction: column;
       flex-flow: column-reverse;
-      text-align: center;
-    }
 
-    p {
-      text-wrap: balance;
+      #second-column {
+        text-align: center;
+
+        h2 {
+          font-size: 32px;
+        }
+      }
     }
   }
 </style>

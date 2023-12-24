@@ -21,7 +21,7 @@ import BankImage from "../../assets/imgs/bank-drawing.webp";
     </p>
   </div>
   <div id="second-column">
-    <Image src={BankImage} alt="" width="550" height="500" />
+    <Image src={BankImage} alt="Dibujo de un banco para sentarse" />
   </div>
 </section>
 
@@ -35,33 +35,38 @@ import BankImage from "../../assets/imgs/bank-drawing.webp";
     );
     display: flex;
     align-items: center;
-    gap: 1.5em;
+    gap: 6em;
 
     #first-column {
-      ul {
-        li {
-          margin: 14px 0;
-          width: 60ch;
-        }
-      }
-
       p {
-        width: 60ch;
+        text-wrap: balance;
+        width: min(100%, 60ch);
       }
     }
 
-    #second-column img {
-      border-radius: 10px;
+    #second-column {
+      width: 100%;
+      img {
+        object-fit: cover;
+        border-radius: 10px;
+        height: 30em;
+        width: min(100%, 35em);
+      }
     }
   }
 
-  @media (width < 1024px) {
+  @media screen and (max-width: 425px) {
     #first-section {
+      padding: 6em 30px;
       flex-direction: column;
-      justify-content: center;
-    }
 
-    p {
+      #first-column {
+        text-align: center;
+
+        h2 {
+          font-size: 32px;
+        }
+      }
     }
   }
 </style>

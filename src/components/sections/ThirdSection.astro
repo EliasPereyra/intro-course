@@ -23,41 +23,49 @@ import YoutubeImage from "../../assets/imgs/youtube-logo.webp";
     </p>
   </div>
   <div id="second-column">
-    <Image src={YoutubeImage} alt="Imagen" width="350" height="300" />
+    <Image src={YoutubeImage} alt="Imagen" />
   </div>
 </section>
 
 <style>
   #third-section {
     background: linear-gradient(108deg, #fff 13.78%, #f6f6f6 98.34%);
-
     padding: 8em 60px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     #first-column {
-      h2 {
-        width: 30ch;
-      }
+      text-wrap: balance;
 
       p {
-        width: 60ch;
         margin-top: 20px;
+      }
+    }
+
+    #second-column {
+      width: 100%;
+
+      img {
+        object-fit: cover;
+        width: min(100%, 25em);
       }
     }
   }
 
-  @media (width < 1024px) {
+  @media screen and (max-width: 768px) {
     #third-section {
+      padding: 6em 30px;
       flex-direction: column;
       justify-content: center;
-      text-align: center;
-      text-wrap: balance;
-    }
 
-    h2 {
-      width: 15ch;
+      #first-column {
+        text-align: center;
+
+        h2 {
+          font-size: 32px;
+        }
+      }
     }
   }
 </style>

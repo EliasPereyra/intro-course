@@ -31,11 +31,11 @@ import Button from "../atoms/Button.astro";
     );
     display: flex;
     align-items: center;
-    gap: 8em;
+    gap: min(4em, 8em);
     justify-content: center;
-    padding: 8em 0;
+    padding: 8em 60px;
 
-    & #text-items {
+    #text-items {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -44,8 +44,8 @@ import Button from "../atoms/Button.astro";
       margin-top: 3rem;
 
       h2 {
-        width: 20ch;
-        font-size: 38px;
+        width: min(100%, 20ch);
+        font-size: clamp(1rem, 32px, 38px);
       }
 
       #first-column {
@@ -56,9 +56,24 @@ import Button from "../atoms/Button.astro";
     }
   }
 
-  @media (width < 1024px) {
+  @media screen and (max-width: 1024px) {
     #benefits {
       flex-direction: column;
+
+      #text-items {
+        text-align: center;
+        text-wrap: balance;
+      }
+    }
+  }
+
+  @media screen and (max-width: 425px) {
+    #benefits {
+      padding: 6em 30px;
+
+      h2 {
+        font-size: 32px;
+      }
     }
   }
 </style>

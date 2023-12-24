@@ -22,6 +22,7 @@ import ScrollDownLogo from "../../assets/imgs/scroll-down.svg"
 			<small>Desplázate hacia abajo para ver más secciones</small>
 		</div>
 	</div>
+
 	<div id="second-column">
 		<iframe width="500" height="315" src="https://www.youtube.com/embed/Ffg2JN7WHa8?si=1oUO5T-K4qhlvWgK" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="border:none"></iframe>
 	</div>
@@ -50,9 +51,9 @@ import ScrollDownLogo from "../../assets/imgs/scroll-down.svg"
 				}
 
 				h1 {
-					font-size: 54px;
-					width: 13em;
-					line-height: 78px;
+					font-size: min(44px, 54px);
+					width: min(100%, 13em);
+					line-height: min(68px, 78px);
 				}
 
 				h1::before {
@@ -67,16 +68,30 @@ import ScrollDownLogo from "../../assets/imgs/scroll-down.svg"
 				h3 {
 					color: var(--text);
 					font-weight: 300;
-					line-height: 38px;
-					width: 29em;
+					line-height: min(34px, 38px);
+					width: min(100%, 29em);
 				}
 
 				#btn-wrapper {
 					margin-top: 10px;
 				}
 			}
+			@media screen and (max-width: 425px) {
+				.text-content {
+					text-align: center;
+					text-wrap: balance;
+					align-items: center;
+				}
+			}
+			}
 
-		#scroll-down {
+			@media screen and (max-width: 425px) {
+				#first-column {
+					text-align: center;
+				}
+			}
+
+			#scroll-down {
 			color: rgba(0, 0, 0, 0.68);
 			text-align: center;
 			width: 20ch;
@@ -87,22 +102,22 @@ import ScrollDownLogo from "../../assets/imgs/scroll-down.svg"
 			flex-direction: column;
 			gap: 5px;
 
-			& small {
+			small {
 				font-size: 11px;
 				font-weight: 300;
 				color: rgba(0, 0, 0, 0.68);
 			}
-	}
+			}
+
+			@media screen and (max-width: 425px) {
+				#scroll-down {
+					margin: 7rem auto;
+				}
+			}
 	}
 
 		#second-column {
-			width: 25em;
 			padding: 4em 0;
-			@container (width < 1024px) {
-				iframe {
-					display: none;
-				}
-			}
 
 			iframe {
 				border-radius: 10px;
@@ -116,41 +131,20 @@ import ScrollDownLogo from "../../assets/imgs/scroll-down.svg"
 				fill: conic-gradient(from 60deg at 84.97% 73.68%, rgba(225, 131, 53, 0.25) 0deg, rgba(254, 253, 251, 0.00) 360deg);
 				mix-blend-mode: color;
 			}
-		}
-	}
 
-	@media (width < 1024px) {
-		#hero-section {
-			padding: 4em 60px;
-		}
-
-		#first-column img {
-			width: 6em;
-		}
-
-		#second-column {
-			display: none;
-			justify-content: center;
-		}
-
-		#text-content {
-			justify-content: center;
-			align-items: center;
-		}
-
-		#scroll-down {
-			margin-top: 2rem;
-		}
-	}
-
-	@media (width < 425px) {
-		#first-column {
-			.text-content {
-				h1 {
-					font-size: 46px;
-					width: 20ch;
+			@media screen and (max-width: 1024px) {
+				iframe {
+					display: none;
 				}
 			}
 		}
-	}
+
+
+@media screen and (max-width: 425px) {
+	#hero-section {
+		padding: 4em 30px;
+		flex-direction: column;
+		height: 100%;
+}
+}
 </style>
