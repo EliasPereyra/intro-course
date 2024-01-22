@@ -126,28 +126,15 @@ const { title, description, course_author } = Astro.props;
     -ms-overflow-style: none;
   }
 
-  *::-webkit-scrollbar {
-    width: 0;
-  }
-
-  *::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background: transparent;
-    border: none;
-  }
-
   html {
     scroll-behavior: smooth;
   }
 
-  h1,
+  :is(h1,
   h2,
   h3,
   h4,
-  a {
+  a) {
     font-family: Poppins, sans-serif;
   }
 
@@ -155,10 +142,10 @@ const { title, description, course_author } = Astro.props;
     font-size: 38px;
   }
 
-  p,
+  :is(p,
   small,
   li,
-  summary {
+  summary) {
     font-family: "Hind", sans-serif;
   }
 
