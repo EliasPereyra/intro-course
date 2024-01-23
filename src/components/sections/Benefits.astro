@@ -1,5 +1,8 @@
 ---
 import Button from "../atoms/Button.astro";
+
+import Guarantee from "../../assets/imgs/guarantee.webp"
+import { Image } from "astro:assets";
 ---
 
 <section id="benefits">
@@ -13,9 +16,14 @@ import Button from "../atoms/Button.astro";
       <li class="description">Grabaciones Bonos</li>
       <li class="description">Certificado por cada módulo</li>
     </ul>
+    <Button />
   </div>
   <div id="second-column">
-    <Button />
+    <div id="guarantee">
+      <Image src={Guarantee} alt="Imagen mostrando el numero de dias como garantia de la compra" width="130" />
+      <h4>¿Aún no estás seguro si el Curso de Dibujo con Realismo es para ti?</h4>
+      <p>No se preocupe. Tienes 7 días de Garantía Incondicional para iniciar el curso y solicitar el reembolso, sin burocracia, si no te gusta o no te adaptas al método.</p>
+    </div>
   </div>
 </section>
 
@@ -31,7 +39,7 @@ import Button from "../atoms/Button.astro";
     );
     display: flex;
     align-items: center;
-    gap: min(4em, 8em);
+    gap: min(1em, 8em);
     justify-content: center;
     padding: 8em 60px;
 
@@ -54,6 +62,28 @@ import Button from "../atoms/Button.astro";
         gap: 10px;
       }
     }
+
+    #second-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 30em;
+        gap: 1rem;
+        #guarantee {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          align-items: center;
+
+          h4 {
+            text-align: center;
+          }
+          p {
+            width: min(35ch, 40ch);
+            text-align: center;
+          }
+        }
+      }
   }
 
   @media screen and (max-width: 1024px) {
@@ -62,7 +92,9 @@ import Button from "../atoms/Button.astro";
 
       #text-items {
         text-align: center;
-        text-wrap: balance;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
     }
   }
